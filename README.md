@@ -1,4 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SIAS - Strategic International Accounting Services Website
+
+A modern, responsive website for SIAS built with Next.js, TypeScript, and Tailwind CSS.
+
+## Overview
+
+SIAS website is a professional platform designed to showcase accounting, auditing, and advisory services. The website features a clean, modern design with comprehensive information about our services, client testimonials, and easy contact options.
+
+## Features
+
+- 🎨 Modern UI with Tailwind CSS
+- 📱 Fully Responsive Design
+- ⚡ Fast Performance with Next.js
+- 🔍 SEO Optimized
+- 📊 Interactive Service Cards
+- 💬 Client Testimonials
+- 📝 Contact Form
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Lucide React Icons
+- React Hooks
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/AkshyAkky/sias-website.git
+```
+
+2. Install dependencies
+
+```bash
+cd sias-website
+npm install
+# or
+yarn install
+```
+
+3. Start the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Project Structure
+
+```
+sias-website/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── ContactForm.tsx
+│   │   ├── HomePage.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── ServiceCard.tsx
+│   │   ├── StatCard.tsx
+│   │   └── TestimonialCard.tsx
+│   └── styles/
+├── public/
+├── package.json
+└── tailwind.config.js
+```
+
+## Development
+
+You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+
+### Key Components
+
+- `HomePage`: Main landing page component
+- `ServiceCard`: Displays service information
+- `TestimonialCard`: Shows client testimonials
+- `ContactForm`: Handles user inquiries
+- `Navbar`: Navigation component
+- `StatCard`: Displays company statistics
+
+## Building for Production
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+## Deployment
+
+The easiest way to deploy this Next.js app is to use the [Vercel Platform](https://vercel.com/new).
+
+1. Push your code to a Git repository
+2. Import your project into Vercel
+3. Vercel will detect Next.js automatically and enable the correct settings
+4. Your application is deployed!
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3.
 
 ## Getting Started
 
