@@ -36,7 +36,7 @@ SIAS website is a professional platform designed to showcase accounting, auditin
 1. Clone the repository
 
 ```bash
-git clone https://github.com/AkshyAkky/sias-website.git
+git clone https://github.com/Akshyakky/sias-website
 ```
 
 2. Install dependencies
