@@ -36,9 +36,9 @@ const ContactForm = () => {
           className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-24"
         />
         <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors font-medium">
-          Let's Talk
+          Let&apos;s Talk
         </button>
-        {formStatus === "submitted" && <div className="text-green-600 text-center">Thank you! We'll contact you soon.</div>}
+        {formStatus === "submitted" && <div className="text-green-600 text-center">Thank you! We&apos;ll contact you soon.</div>}
       </form>
     </div>
   );

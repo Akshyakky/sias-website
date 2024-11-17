@@ -2,7 +2,6 @@ import React from "react";
 import Navigation from "./Navbar";
 import ServiceCard from "./ServiceCard";
 import TestimonialCard from "./TestimonialCard";
-import StatCard from "./StatCard";
 import ContactForm from "./ContactForm";
 import { Calculator, FileText, TrendingUp, Users, Building, Award, Globe } from "lucide-react";
 
