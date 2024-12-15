@@ -10,12 +10,11 @@ const Navigation = () => {
     { name: "Home", href: "#" },
     { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
-    { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="py-4">
+    <nav className="py-4 relative">
       <div className="flex justify-between items-center">
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
@@ -27,14 +26,17 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white p-2">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-white p-2 z-50"
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-lg py-2 md:hidden mx-4">
+        <div className="absolute top-full left-0 right-0 bg-white rounded-lg shadow-lg py-2 md:hidden mt-2 z-40">
           {links.map((link) => (
             <a key={link.name} href={link.href} className="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors" onClick={() => setIsOpen(false)}>
               {link.name}
