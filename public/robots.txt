@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://siasaccounting.com/sitemap.xml

@@ -1,4 +1,3 @@
-// ContactForm.tsx
 "use client";
 import React, { useState } from "react";
 import { AlertCircle } from "lucide-react";
@@ -21,7 +20,7 @@ const ContactForm = () => {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    
+
     const data: FormData = {
       firstName: formData.get("firstName") as string,
       lastName: formData.get("lastName") as string,
@@ -46,7 +45,8 @@ const ContactForm = () => {
       setFormStatus("success");
       form.reset();
       setTimeout(() => setFormStatus("idle"), 3000);
-    } catch (error) {
+    } catch {
+      // Removed the unused parameter entirely
       setFormStatus("error");
       setErrorMessage("Failed to send message. Please try again later.");
       setTimeout(() => setFormStatus("idle"), 3000);
@@ -55,9 +55,7 @@ const ContactForm = () => {
 
   return (
     <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-2xl font-bold text-center text-blue-900 mb-6">
-        Request A Call Back Today
-      </h2>
+      <h2 className="text-2xl font-bold text-center text-blue-900 mb-6">Request A Call Back Today</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -83,21 +81,9 @@ const ContactForm = () => {
           <select className="w-24 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
             <option value="+971">+971</option>
           </select>
-          <input
-            required
-            name="phone"
-            type="tel"
-            placeholder="Phone Number"
-            className="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <input required name="phone" type="tel" placeholder="Phone Number" className="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
-        <input
-          required
-          name="email"
-          type="email"
-          placeholder="Email"
-          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+        <input required name="email" type="email" placeholder="Email" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
         <textarea
           required
           name="message"
@@ -111,13 +97,9 @@ const ContactForm = () => {
         >
           {formStatus === "submitting" ? "Sending..." : "Let's Talk"}
         </button>
-        
-        {formStatus === "success" && (
-          <div className="text-green-600 text-center">
-            Thank you! We'll contact you soon.
-          </div>
-        )}
-        
+
+        {formStatus === "success" && <div className="text-green-600 text-center">Thank you! We'll contact you soon.</div>}
+
         {formStatus === "error" && (
           <div className="flex items-center justify-center gap-2 text-red-600">
             <AlertCircle className="w-4 h-4" />
