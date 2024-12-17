@@ -39,17 +39,17 @@ const ContactForm = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to send message");
       }
 
       setFormStatus("success");
       form.reset();
-      setTimeout(() => setFormStatus("idle"), 3000);
-    } catch {
-      // Removed the unused parameter entirely
+      setTimeout(() => setFormStatus("idle"), 5000); // Increased timeout for better visibility
+    } catch (error) {
       setFormStatus("error");
-      setErrorMessage("Failed to send message. Please try again later.");
-      setTimeout(() => setFormStatus("idle"), 3000);
+      setErrorMessage(error instanceof Error ? error.message : "Failed to send message. Please try again later.");
+      setTimeout(() => setFormStatus("idle"), 5000);
     }
   };
 
@@ -78,10 +78,18 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-4">
-          <select className="w-24 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <select className="w-24 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" disabled>
             <option value="+971">+971</option>
           </select>
-          <input required name="phone" type="tel" placeholder="Phone Number" className="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input
+            required
+            name="phone"
+            type="tel"
+            placeholder="Phone Number"
+            pattern="[0-9]{9}"
+            title="Please enter a valid 9-digit phone number"
+            className="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
         <input required name="email" type="email" placeholder="Email" className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
         <textarea
@@ -98,7 +106,7 @@ const ContactForm = () => {
           {formStatus === "submitting" ? "Sending..." : "Let's Talk"}
         </button>
 
-        {formStatus === "success" && <div className="text-green-600 text-center">Thank you! We'll contact you soon.</div>}
+        {formStatus === "success" && <div className="text-green-600 text-center">Thank you! We've received your message and will contact you soon.</div>}
 
         {formStatus === "error" && (
           <div className="flex items-center justify-center gap-2 text-red-600">

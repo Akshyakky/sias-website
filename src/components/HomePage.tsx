@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "./Navbar";
 import ContactForm from "./ContactForm";
-import { Users, Building, Award, Globe, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Logo from "./Logo";
 
 export interface ContactInfo {
@@ -11,7 +11,7 @@ export interface ContactInfo {
 const HomePage = () => {
   const contactInfo: ContactInfo = {
     phone: "+97150 2258370",
-    email: "info@siasaccounting.com"
+    email: "info@siasaccounting.com",
   };
   const services = {
     accounting: [
@@ -63,7 +63,6 @@ const HomePage = () => {
       },
     ],
   };
-
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -132,38 +131,27 @@ const HomePage = () => {
       {/* Enhanced Hero Section */}
       <div className="relative bg-gradient-to-br from-blue-800 to-blue-600 text-white">
         {/* Modern geometric background pattern */}
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        ></div>
 
         {/* Content container */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl py-12 md:py-20">
             {/* Hero content */}
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-              Accounting and Bookkeeping Services in UAE
-            </h1>
-            <p className="text-lg md:text-xl text-blue-100 mb-6">
-              Expert financial guidance for businesses of all sizes - from startups to established enterprises
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Accounting and Bookkeeping Services in UAE</h1>
+            <p className="text-lg md:text-xl text-blue-100 mb-6">Expert financial guidance for businesses of all sizes - from startups to established enterprises</p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
                 className="inline-flex items-center bg-white text-blue-800 px-8 py-3 rounded-md font-semibold hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Get Started
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
             </div>
