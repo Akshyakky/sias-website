@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 
 // Create reusable transporter object using Office 365 SMTP transport
 const transporter = nodemailer.createTransport({
-  host: "smtp.office365.com",
+  host: "mail.siasaccounting.com",
   port: 587,
   secure: false,
   auth: {
@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Verify SMTP connection configuration
-transporter.verify(function (error, success) {
+transporter.verify(function (error) {
   if (error) {
     console.error("SMTP Verification Error:", error);
   } else {

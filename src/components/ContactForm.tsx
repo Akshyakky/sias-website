@@ -30,7 +30,7 @@ const ContactForm = () => {
     };
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch('https://siasaccounting.com/api/contact.php', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,8 +45,9 @@ const ContactForm = () => {
 
       setFormStatus("success");
       form.reset();
-      setTimeout(() => setFormStatus("idle"), 5000); // Increased timeout for better visibility
+      setTimeout(() => setFormStatus("idle"), 5000);
     } catch (error) {
+      console.error('Form submission error:', error);
       setFormStatus("error");
       setErrorMessage(error instanceof Error ? error.message : "Failed to send message. Please try again later.");
       setTimeout(() => setFormStatus("idle"), 5000);

@@ -223,6 +223,7 @@ const HomePage = () => {
       </a> */}
 
       {/* Footer - Adjusted Blue */}
+      {/* Footer - Adjusted Blue */}
       <footer className="bg-blue-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
@@ -232,10 +233,12 @@ const HomePage = () => {
           <div className="text-center">
             <p className="mb-4">Your Trusted Financial Partner in UAE</p>
             <div className="flex justify-center space-x-6">
-              <a href="tel:+97150 2258370" className="hover:text-blue-100 transition-colors">
+              <a href="tel:+97150 2258370" className="hover:text-blue-100 transition-colors flex items-center">
+                <Phone size={16} className="mr-2" />
                 +97150 2258370
               </a>
-              <a href="mailto:info@siasaccounting.com" className="hover:text-blue-100 transition-colors">
+              <a href="mailto:info@siasaccounting.com" className="hover:text-blue-100 transition-colors flex items-center">
+                <Mail size={16} className="mr-2" />
                 info@siasaccounting.com
               </a>
             </div>
