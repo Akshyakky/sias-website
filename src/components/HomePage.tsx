@@ -171,7 +171,7 @@ const HomePage = () => {
               <div className="relative">
                 <div className="relative rounded-lg overflow-hidden shadow-2xl">
                   <img
-                    src="/images/accounting-hero.jpg"
+                    src="/images/Sias_4C.png"
                     alt="Professional accounting team working with financial documents and technology"
                     className="w-full h-80 md:h-96 object-cover"
                     loading="eager"
