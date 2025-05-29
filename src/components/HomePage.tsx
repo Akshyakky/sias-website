@@ -129,7 +129,7 @@ const HomePage = () => {
       </div>
 
       {/* Enhanced Hero Section */}
-      <div className="relative bg-gradient-to-br from-blue-800 to-blue-600 text-white">
+      <div className="relative bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white">
         {/* Modern geometric background pattern */}
         <div
           className="absolute inset-0"
@@ -140,20 +140,42 @@ const HomePage = () => {
 
         {/* Content container */}
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl py-12 md:py-20">
-            {/* Hero content */}
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Accounting and Bookkeeping Services in UAE</h1>
-            <p className="text-lg md:text-xl text-blue-100 mb-6">Expert financial guidance for businesses of all sizes - from startups to established enterprises</p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="inline-flex items-center bg-white text-blue-800 px-8 py-3 rounded-md font-semibold hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-              >
-                Get Started
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
+          <div className="py-12 md:py-20">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Hero content - Left side */}
+              <div className="max-w-2xl">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Accounting and Bookkeeping Services in UAE</h1>
+                <p className="text-lg md:text-xl text-blue-100 mb-6">Expert financial guidance for businesses of all sizes - from startups to established enterprises</p>
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center bg-white text-blue-800 px-8 py-3 rounded-md font-semibold hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  >
+                    Get Started
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Hero Image - Right side */}
+              <div className="relative">
+                <div className="relative rounded-lg overflow-hidden shadow-2xl">
+                  <img
+                    src="/images/accounting-hero.jpg"
+                    alt="Professional accounting team working with financial documents and technology"
+                    className="w-full h-80 md:h-96 object-cover"
+                    loading="eager"
+                  />
+                  {/* Image overlay for better integration */}
+                  <div className="absolute inset-0 bg-blue-900/10"></div>
+                </div>
+
+                {/* Floating accent elements */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-300/20 rounded-full blur-2xl"></div>
+              </div>
             </div>
 
             {/* Subtle decorative elements */}
@@ -164,22 +186,32 @@ const HomePage = () => {
       </div>
 
       {/* Services Section */}
-      <div id="services" className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-blue-700">Our Services</h2>
-          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
-            At SIA Accounting Services, we provide expert financial guidance tailored to businesses of all sizes, from dynamic startups to well-established enterprises. Our
-            commitment is to help you achieve financial clarity, compliance, and growth by offering comprehensive and professional accounting solutions.
-          </p>
-          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">We offer a full range of accounting services designed to meet the unique needs of your business:</p>
+      <div id="services" className="relative py-16">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img src="/images/services-background.jpg" alt="Modern office environment" className="w-full h-full object-cover" />
+          {/* Overlay for text readability */}
+          <div className="absolute inset-0 bg-white/85"></div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.accounting.map((service, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all">
-              <h3 className="text-xl font-bold text-blue-700 mb-4">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
-          ))}
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-blue-700">Our Services</h2>
+            <p className="text-gray-700 mt-4 max-w-3xl mx-auto">
+              At SIA Accounting Services, we provide expert financial guidance tailored to businesses of all sizes, from dynamic startups to well-established enterprises. Our
+              commitment is to help you achieve financial clarity, compliance, and growth by offering comprehensive and professional accounting solutions.
+            </p>
+            <p className="text-gray-700 mt-4 max-w-3xl mx-auto">We offer a full range of accounting services designed to meet the unique needs of your business:</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.accounting.map((service, index) => (
+              <div key={index} className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-6 hover:shadow-xl hover:bg-white transition-all">
+                <h3 className="text-xl font-bold text-blue-700 mb-4">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -223,6 +255,7 @@ const HomePage = () => {
       </a> */}
 
       {/* Footer - Adjusted Blue */}
+      {/* Footer - Adjusted Blue */}
       <footer className="bg-blue-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
@@ -232,10 +265,12 @@ const HomePage = () => {
           <div className="text-center">
             <p className="mb-4">Your Trusted Financial Partner in UAE</p>
             <div className="flex justify-center space-x-6">
-              <a href="tel:+97150 2258370" className="hover:text-blue-100 transition-colors">
+              <a href="tel:+97150 2258370" className="hover:text-blue-100 transition-colors flex items-center">
+                <Phone size={16} className="mr-2" />
                 +97150 2258370
               </a>
-              <a href="mailto:info@siasaccounting.com" className="hover:text-blue-100 transition-colors">
+              <a href="mailto:info@siasaccounting.com" className="hover:text-blue-100 transition-colors flex items-center">
+                <Mail size={16} className="mr-2" />
                 info@siasaccounting.com
               </a>
             </div>
