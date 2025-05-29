@@ -16,3 +16,32 @@ body {
   color: rgb(var(--foreground-rgb));
   background: #f8fafc;
 }
+
+@keyframes float1 {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); }
+  50% { transform: translateY(-10px) translateX(5px) rotate(2deg); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); }
+}
+
+@keyframes float2 {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); }
+  50% { transform: translateY(10px) translateX(-5px) rotate(-2deg); }
+  100% { transform: translateY(0) translateX(0) rotate(0deg); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(1.05); }
+}
+
+.animate-float-1 {
+  animation: float1 8s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float2 9s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 10s ease-in-out infinite;
+}

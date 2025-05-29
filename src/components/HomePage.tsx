@@ -297,18 +297,29 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="bg-blue-50 py-16">
+      {/* Why Outsource Our Accounting Services? Section - Compact Design */}
+      <div className="bg-blue-50 py-12">
+        {" "}
+        {/* Reduced py-16 to py-12 */}
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
+            {" "}
+            {/* Reduced mb-12 to mb-8 */}
             <h2 className="text-3xl font-bold text-blue-700">Why Outsource Our Accounting Services?</h2>
-            <p className="text-gray-600 mt-4 max-w-3xl mx-auto">Outsourcing your accounting needs can significantly benefit your business. Here's why it's a smart decision:</p>
+            <p className="text-gray-600 mt-3 max-w-3xl mx-auto">
+              Outsourcing your accounting needs can significantly benefit your business. Here's why it's a smart decision:
+            </p>{" "}
+            {/* Reduced mt-4 to mt-3 */}
           </div>
 
-          <div className="max-w-6xl mx-auto space-y-8">
+          <div className="max-w-6xl mx-auto space-y-6">
+            {" "}
+            {/* Reduced space-y-8 to space-y-6 */}
             {services.benefits.map((benefit, index) => (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-all ${
+                className={`flex flex-col lg:flex-row items-center gap-6 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all ${
+                  // Reduced gap-8 to gap-6 and p-8 to p-6
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
@@ -318,7 +329,7 @@ const HomePage = () => {
                     <img
                       src={getBenefitImage(benefit.title)}
                       alt={`${benefit.title} illustration`}
-                      className="w-full h-64 lg:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-56 lg:h-64 object-cover hover:scale-105 transition-transform duration-300" /* Reduced h-64 lg:h-80 to h-56 lg:h-64 */
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-blue-600/10"></div>
@@ -326,10 +337,11 @@ const HomePage = () => {
                 </div>
 
                 {/* Content Section */}
-                <div className="w-full lg:w-1/2 space-y-4">
+                <div className="w-full lg:w-1/2 space-y-3">
+                  {" "}
+                  {/* Reduced space-y-4 to space-y-3 */}
                   <h3 className="text-2xl font-bold text-blue-700">{benefit.title}</h3>
-                  <p className="text-gray-600 text-lg leading-relaxed">{benefit.description}</p>
-
+                  <p className="text-gray-600 text-base leading-relaxed">{benefit.description}</p> {/* Reduced text-lg to text-base for subtle compactness */}
                   {/* Optional: Add a subtle accent or call-to-action */}
                   <div className="flex items-center text-blue-600 font-medium">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
