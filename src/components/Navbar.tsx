@@ -1,6 +1,6 @@
 // Navbar.tsx - Enhanced with glass morphism and animations
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ContactInfo } from "./HomePage";
 
@@ -10,13 +10,6 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ contactInfo }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const links = [
     { name: "Home", href: "#" },

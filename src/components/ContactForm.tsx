@@ -14,7 +14,6 @@ interface FormData {
 const ContactForm = () => {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -74,8 +73,6 @@ const ContactForm = () => {
                 name="firstName"
                 type="text"
                 placeholder="First Name"
-                onFocus={() => setFocusedField("firstName")}
-                onBlur={() => setFocusedField(null)}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-all duration-300 hover:border-gray-300"
               />
             </div>
@@ -85,8 +82,6 @@ const ContactForm = () => {
                 name="lastName"
                 type="text"
                 placeholder="Last Name"
-                onFocus={() => setFocusedField("lastName")}
-                onBlur={() => setFocusedField(null)}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-all duration-300 hover:border-gray-300"
               />
             </div>
@@ -103,8 +98,6 @@ const ContactForm = () => {
               placeholder="Phone Number"
               pattern="[0-9]{9}"
               title="Please enter a valid 9-digit phone number"
-              onFocus={() => setFocusedField("phone")}
-              onBlur={() => setFocusedField(null)}
               className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-all duration-300 hover:border-gray-300"
             />
           </div>
@@ -114,8 +107,6 @@ const ContactForm = () => {
             name="email"
             type="email"
             placeholder="Email"
-            onFocus={() => setFocusedField("email")}
-            onBlur={() => setFocusedField(null)}
             className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-all duration-300 hover:border-gray-300"
           />
 
@@ -123,8 +114,6 @@ const ContactForm = () => {
             required
             name="message"
             placeholder="What services are you looking for?"
-            onFocus={() => setFocusedField("message")}
-            onBlur={() => setFocusedField(null)}
             className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-all duration-300 hover:border-gray-300 h-24 resize-none"
           />
 
