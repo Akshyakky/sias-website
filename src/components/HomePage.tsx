@@ -218,7 +218,11 @@ const HomePage = () => {
       </div>
 
       {/* Enhanced Services Section */}
-      <div id="services" className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div id="services" className="relative py-20 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <img src="/images/single_service_01.jpg" alt="" className="w-full h-full object-cover" />
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Services</span>
@@ -355,17 +359,22 @@ const HomePage = () => {
       </div>
 
       {/* Enhanced Contact Section */}
-      <div id="contact" className="container mx-auto px-4 py-20">
-        <div className="text-center mb-12">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Get Started</span>
-          <h2 className="text-4xl font-bold text-gray-800 mt-2 mb-4">
-            Partner with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">SIAS Accounting</span>
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Experience seamless financial management. Whether you're a growing startup or a large corporation, we're here to provide the expertise you need.
-          </p>
+      <div id="contact" className="relative container mx-auto px-4 py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <img src="/images/single_service_02.jpg" alt="" className="w-full h-full object-cover object-center" />
         </div>
-        <ContactForm />
+        <div className="relative z-10">
+          <div className="text-center mb-12">
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider">Get Started</span>
+            <h2 className="text-4xl font-bold text-gray-800 mt-2 mb-4">
+              Partner with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">SIAS Accounting</span>
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+              Experience seamless financial management. Whether you're a growing startup or a large corporation, we're here to provide the expertise you need.
+            </p>
+          </div>
+          <ContactForm />
+        </div>
       </div>
 
       {/* Enhanced Footer */}
